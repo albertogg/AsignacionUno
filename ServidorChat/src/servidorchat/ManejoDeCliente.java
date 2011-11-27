@@ -9,10 +9,10 @@ import java.net.*;
 
 public class ManejoDeCliente extends Thread {
 
-    private Socket socket = null;
-    private ManejoDeChat sala = null;
     private DataInputStream dis = null;
     private DataOutputStream dos = null;
+    private Socket socket = null;
+    private ManejoDeChat sala = null;
     private int Identificador = 1;
 
     // Constructor
@@ -21,12 +21,12 @@ public class ManejoDeCliente extends Thread {
         this.socket = socket;
         this.Identificador = identificadorEnLista;
         try {
-            dis = new DataInputStream(new 
-                                  BufferedInputStream(socket.getInputStream()));
-            
-            dos = new DataOutputStream(new 
-                                BufferedOutputStream(socket.getOutputStream()));
-            
+            dis = new DataInputStream(new BufferedInputStream(
+                                                      socket.getInputStream()));
+
+            dos = new DataOutputStream(new BufferedOutputStream(
+                                                     socket.getOutputStream()));
+
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -41,20 +41,22 @@ public class ManejoDeCliente extends Thread {
                 String message = dis.readUTF();
                 sala.replicarMensajePorSala(message);
             } catch (IOException ex) {
-                sala.eliminarListaUsuario(Identificador);
+                sala.eliminarDeListaUsuario(Identificador);
                 stop();
             }
         }
     }
+    
     // Metodo encargado de enviar mensajes a los clientes.
     // Es ejecutado desde el hilo de la sala y llama a cada cliente conectado
     // a esa sala.
+
     public void enviarMensajeAClientes(String message) {
         try {
             dos.writeUTF(message);
             dos.flush();
         } catch (IOException ex) {
-            sala.eliminarListaUsuario(Identificador);
+            sala.eliminarDeListaUsuario(Identificador);
             stop();
         }
     }

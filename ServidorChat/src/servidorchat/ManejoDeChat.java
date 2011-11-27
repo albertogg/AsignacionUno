@@ -13,9 +13,9 @@ public class ManejoDeChat extends Thread {
     private ArrayList<ManejoDeCliente> listado = new 
                                                    ArrayList<ManejoDeCliente>();
     
+    private int puerto;
     private ServerSocket puertoSala = null;
     private int cantidadUsuarios = 0;
-    private int puerto;
 
     // Constructor
     public ManejoDeChat(int puerto) {
@@ -57,15 +57,15 @@ public class ManejoDeChat extends Thread {
 
     // Metodo encargado de replicar el mensaje por todos los clientes
     // que se encuentren conectados a una sala.
-    public synchronized void replicarMensajePorSala(String msg) {
+    public synchronized void replicarMensajePorSala(String message) {
         for (int i = 0; i < listado.size(); i++) {
-            listado.get(i).enviarMensajeAClientes(msg);
+            listado.get(i).enviarMensajeAClientes(message);
         }
     }
     
     // Metodo encargado de eliminar usuarios de la lista de usuarios, utilizada
     // para replicar el mensaje.
-    public synchronized void eliminarListaUsuario(int ID) {
+    public synchronized void eliminarDeListaUsuario(int ID) {
         try {
             ManejoDeCliente usuarioAEliminar = listado.get(ID);
             listado.indexOf(ID);
