@@ -1,0 +1,22 @@
+Grupo 8 
+
+Alberto Grespan CI 18710572
+Carlos Fernandes CI 17868442
+
+Como hacerlo funcionar:
+
+Existen 2 proyectos dentro de la carpeta AsignacionUno, de los cuales una es el servidor para el chat y la otra es el cliente. 
+
+Se debe iniciar el servidor primero ya que es el que escucha las conexiones entrantes por el o los puerto(s) y luego los múltiples clientes. posterior a esto y una vez inicializado uno de los múltiples clientes se debe seleccionar un nombre de usuario para dicho "cliente" y la sala en la que se desea participar.
+En este momento ya se encontrara disponible ese usuario para participar en la conversación que se este realizando.
+
+
+Breve explicación:
+
+Cada sala es independiente de la otra y esto se realizo mediante un hilo independiente para cada sala y un puerto por el cual escucharan dichas salas. Los clientes que se añadan a esa sala serán "sub hilos" de esa sala. Realizamos esto de esta manera porque haciéndolo así los puertos no se encontraran ocupados para transmisión o envió de datos de otro clientes y se garantiza que la información que se envía en una sala no sea divulgada para el resto.
+
+Cada cliente que ingresa al chat se agrega a una lista de  clientes la cual se cicla cada vez que se envía un mensaje, esto con el fin de replicar el mensaje a todos los usuarios de la sala, de salir uno se elimina de dicha lista.
+
+Todos los mensajes enviados por la aplicación se trabajan como Strings.
+
+
