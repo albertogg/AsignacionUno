@@ -18,8 +18,9 @@ import java.io.IOException;
 
 /**
  *
- * @author albertogg
+ * @author Grupo 8
  */
+
 public class Chat extends javax.swing.JFrame {
 
     /** Creates new form Chat */

@@ -12,8 +12,9 @@ package UI;
 
 /**
  *
- * @author albertogg
+ * @author Grupo 8
  */
+
 public class Help extends javax.swing.JFrame {
 
     /** Creates new form Help */

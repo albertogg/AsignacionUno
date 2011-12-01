@@ -8,6 +8,11 @@ import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Grupo 8
+ */
+
 public class ManejoDeChat extends Thread {
 
     private ArrayList<ManejoDeCliente> listado = new 

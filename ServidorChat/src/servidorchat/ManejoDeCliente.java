@@ -7,6 +7,11 @@ package servidorchat;
 import java.io.*;
 import java.net.*;
 
+/**
+ *
+ * @author Grupo 8
+ */
+
 public class ManejoDeCliente extends Thread {
 
     private DataInputStream dis = null;

@@ -16,8 +16,9 @@ import java.net.UnknownHostException;
 
 /**
  *
- * @author albertogg
+ * @author Grupo 8
  */
+
 public class Principal extends javax.swing.JFrame {
 
     /** Creates new form Principal */

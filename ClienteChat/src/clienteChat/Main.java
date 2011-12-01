@@ -8,8 +8,9 @@ import UI.Principal;
 
 /**
  *
- * @author albertogg
+ * @author Grupo 8
  */
+
 public class Main {
 
     /**

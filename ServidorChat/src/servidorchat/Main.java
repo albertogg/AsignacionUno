@@ -4,6 +4,11 @@
  */
 package servidorchat;
 
+/**
+ *
+ * @author Grupo 8
+ */
+
 public class Main {
 
     /**
