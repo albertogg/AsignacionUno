@@ -11,4 +11,4 @@ This app was done for distributed systems a course on computer engineering on [U
 This is a [albertogg][alberto] app.
  
 [ucab]: http://www.ucab.edu.ve/escueladeingenierainformatica.html
-[alberto]: twitter.albertogrespan.com
+[alberto]: http://albertogrespan.com
